@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <Id>d2ace7ec-6a61-454e-be76-2e5a5fcca118</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Contoso</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="UpsideDown Productions"/>
+  <Description DefaultValue="A template to get started."/>
+  <IconUrl DefaultValue="https://www.contoso.com/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://www.contoso.com/assets/icon-64.png"/>
+  <SupportUrl DefaultValue="https://www.contoso.com/help"/>
+  <AppDomains>
+    <AppDomain>https://www.contoso.com</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Document"/>
+  </Hosts>
+  <Requirements>
+  <Sets>
+    <Set Name="SharedRuntime" MinVersion="1.1" />
+  </Sets>
+ </Requirements>
+
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://www.contoso.com/taskpane.html"/>
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Document">
+      <Runtimes>
+          <Runtime resid="sharedRuntime" lifetime="long" />
+       </Runtimes>
+        <DesktopFormFactor>
+          <GetStarted>
+            <Title resid="GetStarted.Title"/>
+            <Description resid="GetStarted.Description"/>
+            <LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
+          </GetStarted>
+          <FunctionFile resid="sharedRuntime"/>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <OfficeTab id="TabHome">
+              <Group id="CommandsGroup">
+                <Label resid="CommandsGroup.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+                  <Control xsi:type="Button" id="TaskpaneButton">
+                  <Label resid="TaskpaneButton.Label"/>
+                  <Supertip>
+                    <Title resid="TaskpaneButton.Label"/>
+                    <Description resid="TaskpaneButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>launchTaskpane</FunctionName>
+                  </Action>
+                </Control>
+
+              </Group>
+            </OfficeTab>
+
+            <CustomTab id="CustomTab">
+            <Label resid="CustomTab.Label"/>
+            <Group id="CustomGroup">
+              <Label resid="CustomGroup.Label"/>
+              <Icon>
+                <bt:Image size="16" resid="Icon.16x16"/>
+                <bt:Image size="32" resid="Icon.32x32"/>
+                <bt:Image size="80" resid="Icon.80x80"/>
+              </Icon>
+
+              <!-- Button 1: Enabled and visible -->
+              <Control xsi:type="Button" id="Button1">
+                <Label resid="Button1.Label"/>
+                <Supertip>
+                  <Title resid="Button1.Label"/>
+                  <Description resid="Button1.Tooltip"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+                <Action xsi:type="ExecuteFunction">
+                  <FunctionName>launchTaskpane</FunctionName>
+                </Action>
+              </Control>
+
+              <!-- Button 2: Visible but disabled -->
+              <Control xsi:type="Button" id="Button2">
+                <Label resid="Button2.Label"/>
+                <Supertip>
+                  <Title resid="Button2.Label"/>
+                  <Description resid="Button2.Tooltip"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="Help.Icon.16x16"/>
+                  <bt:Image size="32" resid="Help.Icon.32x32"/>
+                  <bt:Image size="80" resid="Help.Icon.80x80"/>
+                </Icon>
+                <Action xsi:type="ExecuteFunction">
+                  <FunctionName>launcHelpTaskpane</FunctionName>
+                </Action>
+              </Control>
+
+              <!-- Button 3: Invisible and disabled. Still shows in Word even if set Visible to false-->
+              <!--
+              <Control xsi:type="Button" id="Button3">
+                <Label resid="Button3.Label"/>
+                <Supertip>
+                  <Title resid="Button3.Label"/>
+                  <Description resid="Button3.Tooltip"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+                <Enabled>false</Enabled>
+                <Visible>false</Visible>
+                <Action xsi:type="ExecuteFunction">
+                  <FunctionName>handleButton3</FunctionName>
+                </Action>
+              </Control>
+              -->
+
+            </Group>
+          </CustomTab>
+
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16x16" DefaultValue="https://upsidedown.com.au/wp-content/uploads/2019/03/Templates-logo-animation.png"/>
+        <bt:Image id="Icon.32x32" DefaultValue="https://upsidedown.com.au/wp-content/uploads/2019/03/Templates-logo-animation.png"/>
+        <bt:Image id="Icon.80x80" DefaultValue="https://upsidedown.com.au/wp-content/uploads/2019/03/Templates-logo-animation.png"/>
+       <bt:Image id="Help.Icon.16x16" DefaultValue="https://script-lab.public.cdn.office.net/script-lab/7dttl/assets/images/help-80.png"/>
+        <bt:Image id="Help.Icon.32x32" DefaultValue="https://script-lab.public.cdn.office.net/script-lab/7dttl/assets/images/help-80.png"/>
+        <bt:Image id="Help.Icon.80x80" DefaultValue="https://script-lab.public.cdn.office.net/script-lab/7dttl/assets/images/help-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
+        <bt:Url id="sharedRuntime" DefaultValue="https://www.contoso.com/taskpane.html"/>
+         <bt:Url id="Taskpane.Url" DefaultValue="https://www.contoso.com/taskpane.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="GetStarted.Title" DefaultValue="Get started with your sample add-in!"/>
+        <bt:String id="CommandsGroup.Label" DefaultValue="Commands Group"/>
+        <bt:String id="TaskpaneButton.Label" DefaultValue="UDP"/>
+        <bt:String id="CustomTab.Label" DefaultValue="UDP"/>
+      <bt:String id="CustomGroup.Label" DefaultValue="My Group"/>
+      <bt:String id="Button1.Label" DefaultValue="Edit"/>
+      <bt:String id="Button2.Label" DefaultValue="Help"/>
+      <bt:String id="Button3.Label" DefaultValue="Hidden Button"/>
+
+
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="GetStarted.Description" DefaultValue="Your sample add-in loaded successfully. Go to the HOME tab and click the 'Show Task Pane' button to get started."/>
+        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to Show a Taskpane"/>
+
+              <bt:String id="Button1.Tooltip" DefaultValue="Click to run action"/>
+      <bt:String id="Button2.Tooltip" DefaultValue="This button is disabled"/>
+      <bt:String id="Button3.Tooltip" DefaultValue="This button is hidden and disabled"/>
+
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
