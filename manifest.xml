@@ -8,9 +8,9 @@
   <Description DefaultValue="A template to get started."/>
   <IconUrl DefaultValue="https://rogergmagnificentamazing.github.io/word_template_dist/assets/icon-32.png"/>
   <HighResolutionIconUrl DefaultValue="https://rogergmagnificentamazing.github.io/word_template_dist/assets/icon-64.png"/>
-  <SupportUrl DefaultValue="https://rogergmagnificentamazing.github.io/word_template_dist/help"/>
+  <SupportUrl DefaultValue="https://rogergmagnificentamazing.github.io/word_template_dist/taskpane.html"/> <!-- TODO: make a real help -->
   <AppDomains>
-    <AppDomain>https://www.contoso.com</AppDomain>
+    <AppDomain>https://rogergmagnificentamazing.github.io</AppDomain>
   </AppDomains>
   <Hosts>
     <Host Name="Document"/>
@@ -67,7 +67,6 @@
             </OfficeTab>
 
             <CustomTab id="CustomTab">
-            <Label resid="CustomTab.Label"/>
             <Group id="CustomGroup">
               <Label resid="CustomGroup.Label"/>
               <Icon>
@@ -132,6 +131,8 @@
               -->
 
             </Group>
+                       <Label resid="CustomTab.Label"/>
+ 
           </CustomTab>
 
           </ExtensionPoint>
