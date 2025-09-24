@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
   <Id>d2ace7ec-6a61-454e-be76-2e5a5fcca118</Id>
-  <Version>1.0.0.0</Version>
+  <Version>1.0.0.1</Version>
   <ProviderName>Contoso</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="UpsideDown Productions"/>
   <Description DefaultValue="A template to get started."/>
   <IconUrl DefaultValue="https://rogergmagnificentamazing.github.io/word_template_dist/assets/icon-32.png"/>
   <HighResolutionIconUrl DefaultValue="https://rogergmagnificentamazing.github.io/word_template_dist/assets/icon-64.png"/>
-  <SupportUrl DefaultValue="https://rogergmagnificentamazing.github.io/word_template_dist/taskpane.html"/> <!-- TODO: make a real help -->
+  <SupportUrl DefaultValue="https://www.contoso.com/help"/>
   <AppDomains>
     <AppDomain>https://rogergmagnificentamazing.github.io</AppDomain>
   </AppDomains>
@@ -66,7 +66,7 @@
               </Group>
             </OfficeTab>
 
-            <CustomTab id="CustomTab">
+            <CustomTab id="CustomTab" >
             <Group id="CustomGroup">
               <Label resid="CustomGroup.Label"/>
               <Icon>
@@ -131,8 +131,9 @@
               -->
 
             </Group>
-                       <Label resid="CustomTab.Label"/>
- 
+
+            <Label resid="CustomTab.Label"/>
+
           </CustomTab>
 
           </ExtensionPoint>
@@ -157,13 +158,17 @@
       <bt:ShortStrings>
         <bt:String id="GetStarted.Title" DefaultValue="Get started with your sample add-in!"/>
         <bt:String id="CommandsGroup.Label" DefaultValue="Commands Group"/>
-        <bt:String id="TaskpaneButton.Label" DefaultValue="UDP"/>
-        <bt:String id="CustomTab.Label" DefaultValue="UDP"/>
+        <bt:String id="TaskpaneButton.Label" DefaultValue="UDP test"/>
+        <bt:String id="CustomTab.Label" DefaultValue="UDP test"/>
       <bt:String id="CustomGroup.Label" DefaultValue="My Group"/>
       <bt:String id="Button1.Label" DefaultValue="Edit"/>
       <bt:String id="Button2.Label" DefaultValue="Help"/>
       <bt:String id="Button3.Label" DefaultValue="Hidden Button"/>
 
+      <bt:String id="MyDropdownTitle" DefaultValue="Select an Action" />
+      <bt:String id="MyDropdownLabel" DefaultValue="Choose Option" />
+      <bt:String id="MenuItem1Label" DefaultValue="Option A" />
+      <bt:String id="MenuItem2Label" DefaultValue="Option B" />
 
       </bt:ShortStrings>
       <bt:LongStrings>
@@ -173,6 +178,10 @@
               <bt:String id="Button1.Tooltip" DefaultValue="Click to run action"/>
       <bt:String id="Button2.Tooltip" DefaultValue="This button is disabled"/>
       <bt:String id="Button3.Tooltip" DefaultValue="This button is hidden and disabled"/>
+
+      <bt:String id="MyDropdownDescription" DefaultValue="Choose from the available options to perform specific tasks or open related panes." />
+       <bt:String id="MenuItem1Description" DefaultValue="This option triggers the A workflow." />
+
 
       </bt:LongStrings>
     </Resources>
