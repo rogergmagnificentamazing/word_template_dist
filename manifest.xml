@@ -39,6 +39,8 @@
           </GetStarted>
           <FunctionFile resid="sharedRuntime"/>
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
+
+      <!--
             <OfficeTab id="TabHome">
               <Group id="CommandsGroup">
                 <Label resid="CommandsGroup.Label"/>
@@ -65,6 +67,7 @@
 
               </Group>
             </OfficeTab>
+            -->
 
             <CustomTab id="CustomTab" >
             <Group id="CustomGroup">
